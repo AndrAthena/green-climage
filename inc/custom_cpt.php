@@ -4,7 +4,7 @@ function green_climate_custom_post_type() {
   $labels_projet = array(
     'name'                => __('Projets', 'green-climate'),
     'singular_name'       => __('Projet', 'green-climate'),
-    'add_new'             => __('Ajouter nouveau', 'green-climate'),
+    'add_new'             => __('Ajouter', 'green-climate'),
     'add_new_item'        => __('Ajouter un nouveau projet', 'green-climate'),
     'edit_item'           => __('Editer un projet', 'green-climate'),
     'new_item'            => __('Nouveau projet', 'green-climate'),
@@ -30,11 +30,11 @@ function green_climate_custom_post_type() {
     'query_var'             => true,
     'rewrite'               => array( 'slug' => 'projet' ),
     'capability_type'       => 'post',
-    'menu_icon'             => '',
+    'menu_icon'             => 'dashicons-clipboard',
     'has_archive'           => true,
     'hierarchical'          => false,
     'menu_position'         => 20,
-    'supports'              => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+    'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
     'can_export'            => true,
   );
   
@@ -43,7 +43,7 @@ function green_climate_custom_post_type() {
   $labels_agenda = array(
     'name'                => __('Agenda', 'green-climate'),
     'singular_name'       => __('Agenda', 'green-climate'),
-    'add_new'             => __('Ajouter nouvel', 'green-climate'),
+    'add_new'             => __('Ajouter', 'green-climate'),
     'add_new_item'        => __('Ajouter nouvel agenda', 'green-climate'),
     'edit_item'           => __('Editer un agenda', 'green-climate'),
     'new_item'            => __('Nouvel agenda', 'green-climate'),
@@ -69,11 +69,11 @@ function green_climate_custom_post_type() {
     'query_var'             => true,
     'rewrite'               => array( 'slug' => 'agenda' ),
     'capability_type'       => 'post',
-    'menu_icon'             => '',
+    'menu_icon'             => get_template_directory_uri() . '/assets/images/calendar.svg',
     'has_archive'           => true,
     'hierarchical'          => false,
     'menu_position'         => 20,
-    'supports'              => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+    'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
     'can_export'            => true,
   );
   

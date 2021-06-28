@@ -19,3 +19,5 @@ $page = $page[0];
     </div>
   </div>
 </section>
+
+<?php wp_reset_postdata() ?>
