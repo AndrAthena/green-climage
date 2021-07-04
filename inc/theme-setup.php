@@ -12,6 +12,7 @@ function green_climat_theme_setup () {
   add_theme_support( "html5", array(
     'search-form'
   ) );
+  add_theme_support( 'post-formats', array('image', 'gallery', 'quote', 'audio', 'video') );
   add_post_type_support( 'page', array( 'excerpt' ) );
 
   load_textdomain( "green-climat", get_template_directory_uri() . '/languages' );

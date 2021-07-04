@@ -32,24 +32,12 @@ body {
   color: #020203;
 }
 
-h1 {
-}
-
 h2 {
   font-size: 2.5rem;
 }
 
 h3 {
   font-size: 2rem;
-}
-
-h4 {
-}
-
-h5 {
-}
-
-h6 {
 }
 
 h1,
@@ -151,6 +139,18 @@ h2.post-title::before,
   max-width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.text-16 {
+  font-size: 1rem;
+}
+
+.text-14 {
+  font-size: 0.875rem;
+}
+
+.text-12 {
+  font-size: 0.75rem;
 }
 /**
  *==================================

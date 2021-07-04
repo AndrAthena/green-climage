@@ -162,6 +162,24 @@ function green_climate_customize( WP_Customize_Manager $wp_customize ) {
     'type'      => 'select',
     'choices'   => $green_climate_posts
   ) );
+
+  /** Company section */
+  $wp_customize->add_section( 'green-climate-homepage-company-section', array(
+    'title'       => __( 'Company section', 'green-climate' ),
+    'description' => __( 'Company section', 'green-climate' ),
+    'panel'       => 'green-climate-panel-home'
+  ) );
+
+  $wp_customize->add_setting( 'green-climate-company-section', array(
+    'default' => ''
+  ) );
+
+  $wp_customize->add_control( 'green-climate-company-section', array(
+    'label'     => __( 'Choose page', 'green-climate' ),
+    'section'   => 'green-climate-homepage-company-section',
+    'settings'  => 'green-climate-company-section',
+    'type'      => 'dropdown-pages',
+  ) );
 }
 
 add_action( 'customize_register', 'green_climate_customize' );
