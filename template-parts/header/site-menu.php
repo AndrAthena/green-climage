@@ -4,11 +4,13 @@
   </svg>
 </button>
 
-  <?php
-    wp_nav_menu( array(
-      'container_id' 			=> 'site-menu',
-      'container_class' 	=> 'collapse navbar-collapse',
-      'menu_class'				=> 'navbar-nav flex-grow-1',
-      'theme_location'	 	=> 'main',
-    ) );
-  ?>
+<?php
+  wp_nav_menu( array(
+    'container_id' 			=> 'site-menu',
+    'container_class' 	=> 'collapse navbar-collapse',
+    'menu_class'				=> 'navbar-nav flex-grow-1',
+    'theme_location'	 	=> 'main',
+  ) );
+?>
+
+<?php get_search_form() ?>

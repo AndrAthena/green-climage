@@ -1,4 +1,11 @@
 (function ($) {
+  var search = $('.search-header button');
+  var form = $('.search-header .search-form');
+  search.click(function () {
+    search.parent('.search-header').toggleClass('active');
+    form.find('input').focus();
+  });
+
   var prev = `
     <button class="btn rounded-0 bg-white">
       <svg width="16" height="16" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">

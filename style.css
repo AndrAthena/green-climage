@@ -227,7 +227,7 @@ h2.post-title::before,
 }
 
 #header .navbar-brand {
-  max-width: 348px;
+  max-width: 320px;
 }
 
 #header .navbar .navbar-collapse {
@@ -239,8 +239,7 @@ h2.post-title::before,
 }
 
 #header .nav-link {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 1rem;
   font-size: 0.875rem;
   color: inherit;
   white-space: nowrap;
@@ -257,6 +256,30 @@ h2.post-title::before,
   padding: 0.5rem 0;
 }
 
+#header .search-header.active .search-form {
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+#header .search-form {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 1rem);
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  transition: all ease 0.2s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (min-width: 1141px) {
+  #header .navbar-brand {
+    max-width: 320px;
+  }
+}
+
 @media (min-width: 992px) {
   #header .navbar .navbar-collapse {
     margin-top: 0;
@@ -269,7 +292,7 @@ h2.post-title::before,
   }
 
   #header .navbar-nav > .nav-item {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
   }
 
   #header .navbar-nav > .nav-item:not(:last-of-type) > .nav-link {
