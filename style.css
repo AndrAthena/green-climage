@@ -283,11 +283,11 @@ h2.post-title::before,
 @media (min-width: 992px) {
   #header .navbar .navbar-collapse {
     margin-top: 0;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
   }
 
   #header .navbar-nav {
-    border-top: 1px solid currentColor;
-    border-bottom: 1px solid currentColor;
     position: relative;
   }
 
