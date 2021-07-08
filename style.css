@@ -17,6 +17,7 @@ Version: 1.0
 :root {
   --primary-color: #0a8e86;
   --secondary-color: #e68007;
+  --blue-color: #00235a;
 }
 
 /**
@@ -93,7 +94,7 @@ a:focus {
 }
 
 .bg-blue {
-  background-color: #00235a;
+  background-color: var(--blue-color);
 }
 
 .inner {
@@ -371,4 +372,83 @@ h2.post-title::before,
 
 #agenda .agenda-list .slick-list {
   max-width: calc(100% - 84px);
+}
+
+/**
+/* Template: Page
+*/
+
+article {
+  width: 100%;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  article {
+    padding-bottom: 80px;
+  }
+}
+
+article h2,
+article h3 {
+  margin-bottom: 0.625rem;
+  text-transform: uppercase;
+}
+
+article h2 {
+  margin-bottom: 1.875rem;
+  color: var(--blue-color);
+}
+
+article p {
+  margin-bottom: 0.625rem;
+}
+
+article ul,
+article ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+article ol {
+  list-style: decimal;
+}
+
+article ol li,
+article ul li {
+  margin-bottom: 0.625rem;
+  line-height: 1.5;
+}
+
+article img {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 1rem;
+}
+
+article .post-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  color: var(--blue-color);
+}
+
+article .post-details span {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+article .post-details span:first-of-type {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+article a {
+  color: var(--blue-color);
+  text-decoration: none;
+  font-weight: 700;
 }
