@@ -10,7 +10,7 @@ function green_climate_link_to( $title, $url, $color="#E68007" ) {
       '</a>';  
 }
 
-$includes = array( '/inc/hook.php', '/inc/theme-setup.php', '/inc/enqueue.php', '/inc/customize.php', '/inc/custom_cpt.php' );
+$includes = array( '/inc/hook.php', '/inc/theme-setup.php', '/inc/enqueue.php', '/inc/customize.php', '/inc/custom_cpt.php', '/inc/widget.php' );
 
 foreach ($includes as $include) {
   $include = locate_template( $include );

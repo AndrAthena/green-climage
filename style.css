@@ -89,6 +89,10 @@ a:focus {
   color: var(--primary-color) !important;
 }
 
+.text-blue {
+  color: var(--blue-color) !important;
+}
+
 .bg-primary {
   background-color: var(--primary-color) !important;
 }
@@ -424,31 +428,80 @@ article ul li {
 }
 
 article img {
+  width: 100%;
   height: 300px;
   object-fit: cover;
   object-position: center;
   margin-bottom: 1rem;
 }
 
-article .post-details {
+article a {
+  color: var(--blue-color);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.post-details {
   display: flex;
   align-items: center;
   margin-bottom: 2.5rem;
   color: var(--blue-color);
 }
 
-article .post-details span {
+.post-details span {
   font-size: 0.75rem;
   font-weight: 700;
 }
 
-article .post-details span:first-of-type {
+.post-details span:first-of-type {
   font-weight: 700;
   text-transform: uppercase;
 }
 
-article a {
+/**
+/* Widget: recent post
+*/
+
+.sidebar-recent-post {
+}
+
+.sidebar-recent-post h3 {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  text-transform: uppercase;
   color: var(--blue-color);
-  text-decoration: none;
-  font-weight: 700;
+}
+
+.sidebar-recent-post ul {
+  margin: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar-recent-post ul li:not(:last-of-type) {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-recent-post ul li a {
+  position: relative;
+  padding-left: 2.5rem;
+  line-height: 2rem;
+}
+
+.sidebar-recent-post ul li a::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  content: url(./assets/images/chevron-right.svg);
+  width: 30px;
+  height: 30px;
+  line-height: 34px;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.16);
 }
