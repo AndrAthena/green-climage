@@ -12,7 +12,7 @@
       <div class="bg-primary py-2 text-white">
         <div class="container d-flex justify-content-between align-items-center">
           <div>
-            <span class="text-14">Fond Vert pour le Climat</span>
+            <span class="text-14">Fonds Vert pour le Climat</span>
             <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0)">
                 <path d="M10.3 8.29999C9.40001 8.69999 8.50001 8.99999 7.70001 9.29999V16.4C8.50001 16.2 9.40001 15.9 10.3 15.4C17 12.3 20.2 16.2 20.2 16.2V8.99999C20.2 8.99999 17 5.09999 10.3 8.29999Z" fill="#3AAA35"/>

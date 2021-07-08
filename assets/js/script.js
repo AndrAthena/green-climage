@@ -1,8 +1,12 @@
 (function ($) {
-  var search = $('.search-header button');
+  var search = $('.search-header');
+  var btn = $('.search-header button');
   var form = $('.search-header .search-form');
-  search.click(function () {
-    search.parent('.search-header').toggleClass('active');
+  $(window).on('load', function () {
+    search.appendTo('#site-menu');
+  });
+  btn.click(function () {
+    search.toggleClass('active');
     form.find('input').focus();
   });
 
