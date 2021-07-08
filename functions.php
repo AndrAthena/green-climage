@@ -16,3 +16,23 @@ foreach ($includes as $include) {
   $include = locate_template( $include );
   load_template( $include );
 }
+
+function green_climate_pagination() {
+  $pages = paginate_links(
+    array(
+      'type'      => 'array',
+      'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#0a8e86"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
+      'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#0a8e86"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>',
+    )
+  );
+  if($pages != NULL) {
+    echo '<div class="pagination">';
+    foreach ($pages as $page) {
+      $active = strpos($page, 'current') ? " active" : "";
+      echo '<li class="page-item' . $active  . '">';
+      echo str_replace( 'page-numbers', 'page-link', $page );
+      echo "</li>";
+    }
+    echo "</div>";
+  } else return;
+}

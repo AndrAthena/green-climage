@@ -23,7 +23,7 @@
             <?php if( has_post_thumbnail() ): ?>
               <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' ) ?>" alt="<?php echo get_the_title() ?>">
             <?php else: ?>
-              <img src="<?php echo esc_url('https://via.placeholder.com/150x160/DDD/0A8E86?text=Green-Climate') ?>" alt="<?php echo get_the_title() ?>">
+              <img src="<?php echo esc_url('https://via.placeholder.com/160/DDD/0A8E86?text=Green-Climate') ?>" alt="<?php echo get_the_title() ?>">
             <?php endif; ?>
           </div>
           <div class="post-content">
@@ -47,17 +47,7 @@
 
       </div>
     </div>
-    <div class="pagination">
-      <?php echo paginate_links(
-        array(
-          'base'      => get_pagenum_link(1) . '%_%',
-          'total'     => $new_query->max_num_pages,
-          'mid_size'  => 2,
-          'prev_text' => __('Précédent', 'green-climate' ),
-          'next_text' => __('Suivant', 'green-climate' ),
-        )
-      ) ?>
-    </div>
+    <?php green_climate_pagination() ?>
   </div>
 </div>
 
