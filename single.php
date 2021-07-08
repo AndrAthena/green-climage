@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="row">
-        <article id="post-<?php the_ID() ?>" <?php post_class('col-md-8') ?>>
+        <article id="post-<?php the_ID() ?>" <?php post_class('col-lg-8') ?>>
         <p class="text-blue text-14">
           <?php echo get_the_excerpt() ?>
         </p>
@@ -25,7 +25,7 @@
           </div>
         </article>
         <?php endif; ?>
-        <div class="col-md-4">
+        <div class="col-lg-4">
           <?php if ( is_active_sidebar( 'sidebar-recent-post' ) ) : ?>
             <?php dynamic_sidebar('sidebar-recent-post'); ?>
         </div>

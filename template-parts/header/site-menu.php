@@ -4,13 +4,23 @@
   </svg>
 </button>
 
-<?php
-  wp_nav_menu( array(
-    'container_id' 			=> 'site-menu',
-    'container_class' 	=> 'collapse navbar-collapse',
-    'menu_class'				=> 'navbar-nav flex-grow-1',
-    'theme_location'	 	=> 'main',
-  ) );
-?>
+<div id="site-menu" class="collapse navbar-collapse">
+  <?php
+    wp_nav_menu( array(
+      'container'           => null,
+      'menu_id'             => 'secondary-menu',
+      'menu_class'          => 'd-lg-none mb-0 list-unstyled',
+      'theme_location'      => 'secondary'
+    ) );
+  ?>
 
-<?php get_search_form() ?>
+  <?php
+    wp_nav_menu( array(
+      'container'         => null,
+      'menu_class'				=> 'navbar-nav flex-grow-1',
+      'theme_location'	 	=> 'main',
+    ) );
+  ?>
+  <?php get_search_form() ?>
+</div>
+

@@ -2,9 +2,6 @@
   var search = $('.search-header');
   var btn = $('.search-header button');
   var form = $('.search-header .search-form');
-  $(window).on('load', function () {
-    search.appendTo('#site-menu');
-  });
   btn.click(function () {
     search.toggleClass('active');
     form.find('input').focus();
