@@ -4,7 +4,7 @@
   <div class="container">
     <?php if( have_posts()): the_post(); ?>
       <div class="py-3">
-        <?php the_title('<h2>', '</h2>') ?>
+        <?php the_title('<h1>', '</h1>') ?>
         <div class="post-details">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" height="12" width="12" class="mr-2" fill="#00235a">
             <defs>
@@ -34,11 +34,7 @@
             <?php the_content() ?>
           </div>
         </article>
-        <?php endif; ?>
-        <div class="col-lg-4">
-          <?php if ( is_active_sidebar( 'sidebar-recent-post' ) ) : ?>
-            <?php dynamic_sidebar('sidebar-recent-post'); ?>
-        </div>
+        <?php get_template_part('/template-parts/content', 'sidebar') ?>
       </div>
     <?php endif ?>
   </div>
