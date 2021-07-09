@@ -352,7 +352,8 @@ h2.post-title::before,
   }
 
   #header .sub-menu .nav-item {
-    flex: 0 0 33.33%;
+    flex: 1 1 33.33%;
+    min-width: 33.33%;
   }
 
   #header .nav-item.menu-item-has-children > a::after {
