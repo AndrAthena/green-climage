@@ -1,9 +1,13 @@
 <?php
 
+/**
+ * Template Name: Full width
+ */
+
 get_header() ?>
 
 <div class="inner">
-  <div class="container">
+  <div class="container-fluid">
 
   <?php if( have_posts() ): while( have_posts() ): the_post();
 
