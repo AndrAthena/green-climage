@@ -18,8 +18,10 @@ foreach ($includes as $include) {
 }
 
 function green_climate_pagination() {
+  global $wp_query;
   $pages = paginate_links(
     array(
+      'total'     => $wp_query->max_num_pages,
       'type'      => 'array',
       'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#0a8e86"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
       'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#0a8e86"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>',
@@ -36,3 +38,10 @@ function green_climate_pagination() {
     echo "</div>";
   } else return;
 }
+
+function green_climate_pre_get_posts($query) {
+  if(!is_admin() && $query->is_main_query() && is_post_type_archive('agenda')) {
+    $query->set('posts_per_page', 9);
+  }
+}
+add_action('pre_get_posts', 'green_climate_pre_get_posts');

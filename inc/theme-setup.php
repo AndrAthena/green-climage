@@ -15,11 +15,11 @@ function green_climat_theme_setup () {
   add_theme_support( 'post-formats', array('image', 'gallery', 'quote', 'audio', 'video') );
   add_post_type_support( 'page', array( 'excerpt', 'page-attributes' ) );
 
-  load_textdomain( "green-climat", get_template_directory_uri() . '/languages' );
+  load_theme_textdomain( "green-climate", get_template_directory_uri() . '/languages' );
 
   register_nav_menus( array(
-    "main" => __( "Primaire", "green-climat" ),
-    "secondary" => __( "Secondaire", "green-climat" )
+    "main" => __( "Primaire", "green-climate" ),
+    "secondary" => __( "Secondaire", "green-climate" )
   ) );
 }
 

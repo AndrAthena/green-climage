@@ -62,7 +62,7 @@ function green_climate_custom_post_type() {
     'show_in_menu'          => true,
     'show_in_admin_bar'     => true,
     'query_var'             => true,
-    'rewrite'               => array( 'slug' => 'agenda' ),
+    'rewrite'               => array( 'slug' => 'agendas' ),
     'capability_type'       => 'post',
     'menu_icon'             => get_template_directory_uri() . '/assets/images/calendar.svg',
     'has_archive'           => true,
