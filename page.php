@@ -4,7 +4,7 @@ get_header() ?>
 
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 <div>
-  <div class="jumbotron text-white" style="background: url(<?php get_the_post_thumbnail_url() ?>) var(--blue-color)">
+  <div class="jumbotron text-white rounded-0" style="background: url(<?php get_the_post_thumbnail_url() ?>) var(--blue-color)">
     <div class="container">
       <?php the_title('<h1>', '</h1>'); ?>
       <?php if(has_excerpt()): ?>

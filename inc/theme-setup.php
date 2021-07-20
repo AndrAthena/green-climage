@@ -1,8 +1,8 @@
 <?php
 
-function green_climat_theme_setup () {
+function green_climate_theme_setup () {
   add_theme_support( 'title-tag' );
-  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'post-thumbnails', array('post', 'page') );
   add_theme_support( 'widgets' );
   add_theme_support( 'custom-logo', array(
     'width'   => 350,
@@ -13,14 +13,14 @@ function green_climat_theme_setup () {
     'search-form'
   ) );
   add_theme_support( 'post-formats', array('image', 'gallery', 'quote', 'audio', 'video') );
-  add_post_type_support( 'page', array( 'excerpt', 'page-attributes' ) );
+  add_post_type_support( 'page', array( 'excerpt', 'page-attributes', 'thumbnail' ) );
 
-  load_textdomain( "green-climat", get_template_directory_uri() . '/languages' );
+  load_theme_textdomain( "green-climate", get_template_directory_uri() . '/languages' );
 
   register_nav_menus( array(
-    "main" => __( "Primaire", "green-climat" ),
-    "secondary" => __( "Secondaire", "green-climat" )
+    "main" => __( "Primaire", "green-climate" ),
+    "secondary" => __( "Secondaire", "green-climate" )
   ) );
 }
 
-add_action( 'after_setup_theme', 'green_climat_theme_setup' );
+add_action( 'after_setup_theme', 'green_climate_theme_setup' );

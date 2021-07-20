@@ -10,7 +10,6 @@
           $args = array(
             'post_per_page=1' => 1,
             'post_type'       => 'post',
-            'exclude'         => array( get_theme_mod( 'green-climate-text-section' ), get_theme_mod('green-climate-company-section') )
           );
           $alaune =  get_posts( $args );
         ?>

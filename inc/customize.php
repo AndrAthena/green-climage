@@ -114,7 +114,8 @@ function green_climate_customize( WP_Customize_Manager $wp_customize ) {
     'label'     => __( 'Contact url', 'green-climate' ),
     'section'   => 'green-climate-contact',
     'settings'  => 'green-climate-social-contact',
-    'type'      => 'dropdown-pages'
+    'type'      => 'select',
+    'choices'   => $green_climate_posts
   ) );
 
   /** Home page */
@@ -128,8 +129,8 @@ function green_climate_customize( WP_Customize_Manager $wp_customize ) {
 
   /** Promoted page */
   $wp_customize->add_section( 'green-climate-homepage', array(
-    'title'       => __( 'Hero section', 'green-climate' ),
-    'description' => __( 'Hero section', 'green-climate' ),
+    'title'       => __( 'Article à la une', 'green-climate' ),
+    'description' => __( 'Article à mettre en avant', 'green-climate' ),
     'panel'       => 'green-climate-panel-home'
   ) );
 
@@ -141,13 +142,14 @@ function green_climate_customize( WP_Customize_Manager $wp_customize ) {
     'label'     => __( 'Promoted page', 'green-climate' ),
     'section'   => 'green-climate-homepage',
     'settings'  => 'green-climate-promoted-page',
-    'type'      => 'dropdown-pages',
+    'type'      => 'select',
+    'choices'   => $green_climate_posts
   ) );
 
   /** Text section */
   $wp_customize->add_section( 'green-climate-homepage-text-section', array(
-    'title'       => __( 'Post Promoted section', 'green-climate' ),
-    'description' => __( 'Post Promoted section', 'green-climate' ),
+    'title'       => __( 'Article à promouvoir', 'green-climate' ),
+    'description' => __( 'Article à promouvoir', 'green-climate' ),
     'panel'       => 'green-climate-panel-home'
   ) );
 
@@ -165,8 +167,8 @@ function green_climate_customize( WP_Customize_Manager $wp_customize ) {
 
   /** Company section */
   $wp_customize->add_section( 'green-climate-homepage-company-section', array(
-    'title'       => __( 'Company section', 'green-climate' ),
-    'description' => __( 'Company section', 'green-climate' ),
+    'title'       => __( 'Chiffre clé de l\'organisation', 'green-climate' ),
+    'description' => __( 'Chiffre clé', 'green-climate' ),
     'panel'       => 'green-climate-panel-home'
   ) );
 
@@ -183,3 +185,5 @@ function green_climate_customize( WP_Customize_Manager $wp_customize ) {
 }
 
 add_action( 'customize_register', 'green_climate_customize' );
+
+?>
