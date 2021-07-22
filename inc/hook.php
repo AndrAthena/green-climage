@@ -1,22 +1,22 @@
 <?php
 
-  function green_climat_nav_menu_css_class( $classes, $item, $args ) {
+function green_climate_nav_menu_css_class( $classes, $item, $args ) {
   if( 'main' == $args->theme_location ) {
     $classes[] = 'nav-item';
   }
 
   return $classes;
 }
-add_filter( 'nav_menu_css_class', 'green_climat_nav_menu_css_class', 10, 4 );
+add_filter( 'nav_menu_css_class', 'green_climate_nav_menu_css_class', 10, 4 );
 
-function green_climat_nav_menu_link_attributes( $atts, $item, $args ) {
+function green_climate_nav_menu_link_attributes( $atts, $item, $args ) {
   if( 'main' == $args->theme_location ) {
     $atts['class'] = 'nav-link';
   }
   
   return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'green_climat_nav_menu_link_attributes', 10, 4 );
+add_filter( 'nav_menu_link_attributes', 'green_climate_nav_menu_link_attributes', 10, 4 );
 
 function green_climate_link_to( $title, $url, $color="#E68007" ) {
   echo  '<a href="' . esc_url( $url )  .  '" class="d-inline-flex align-items-center ml-auto font-weight-bold">' .
@@ -27,7 +27,6 @@ function green_climate_link_to( $title, $url, $color="#E68007" ) {
         '</svg>' .
       '</a>';  
 }
-
 
 function green_climate_pagination() {
   $pages = paginate_links(
@@ -48,5 +47,46 @@ function green_climate_pagination() {
     echo "</div>";
   } else return;
 }
+
+function shortcode_menu() {
+  $output = "";
+  
+  $output .= '<div class="custom-menu">';
+  $output .= '<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Toggle navigation">';
+  $output .= '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">';
+  $output .= '<path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>';
+  $output .= '</svg>';
+  $output .= '</button>';
+    
+  $output .= '<div id="site-menu" class="collapse navbar-collapse">';
+  
+  $output .= wp_nav_menu( array(
+    'container'           => null,
+    'menu_id'             => 'secondary-menu',
+    'menu_class'          => 'd-custom mb-0 list-unstyled',
+    'theme_location'      => 'secondary',
+    'echo'                => false,
+    'link_after'          => '<svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7.5149 7.51329L14.9319 1" stroke="black" stroke-miterlimit="10"/></svg>'
+  ) );
+  
+  $output .= wp_nav_menu( array(
+    'container'         => null,
+    'menu_class'				=> 'navbar-nav flex-grow-1',
+    'theme_location'	 	=> 'main',
+    'echo'              => false,
+    'link_after'        => '<svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7.5149 7.51329L14.9319 1" stroke="black" stroke-miterlimit="10"/></svg>'
+  ) );
+  
+  $output .= '</div>';
+  $output .= '</div>';
+
+  return $output;
+}
+
+function add_shortcode_menu() {
+  add_shortcode( 'primary_menu', 'shortcode_menu' );
+}
+
+add_action( 'init', 'add_shortcode_menu' );
 
 ?>
