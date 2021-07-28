@@ -597,3 +597,8 @@ article a {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
+.agenda-list {
+  display: flex !important;
+  flex-wrap: nowrap;
+}
