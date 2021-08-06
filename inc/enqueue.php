@@ -2,6 +2,7 @@
 
 function green_climat_enqueue () {
   wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap', array(), false );
+  wp_enqueue_style( 'roboto-slab', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap', array(), false );
   wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/slick.css', array(), false );
   wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css', array(), false );
   wp_enqueue_style( 'bootstrap-reboot', get_template_directory_uri() . '/assets/css/bootstrap-reboot.min.css', array(), '4.1.3' );
