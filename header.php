@@ -7,7 +7,7 @@
   <?php wp_head () ?>
 </head>
 <body <?php body_class() ?>>
+  <?php get_template_part('template-parts/header/site', 'header') ?>
   <main>
-    <?php get_template_part('template-parts/header/site', 'menu') ?>
 </body>
 </html>

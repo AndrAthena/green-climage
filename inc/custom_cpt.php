@@ -72,42 +72,6 @@ function green_climate_custom_post_type() {
     'can_export'            => true,
   );
   register_post_type( 'agenda', $args_agenda );
-
-  $args_entite = array(
-    'labels'                => array(
-      'name'                => __('Entité', 'green-climate'),
-      'singular_name'       => __('Entité', 'green-climate'),
-      'add_new'             => __('Ajouter', 'green-climate'),
-      'add_new_item'        => __('Ajouter une nouvelle entité', 'green-climate'),
-      'edit_item'           => __('Editer une entité', 'green-climate'),
-      'new_item'            => __('Nouvelle entité', 'green-climate'),
-      'all_items'           => __('Toutes les entités', 'green-climate'),
-      'view_item'           => __('Voir les entités', 'green-climate'),
-      'search_items'        => __('Rechercher entités', 'green-climate'),
-      'not_found'           => __('Entités non trouvées', 'green-climate'),
-      'not_found_in_trash'  => __('Entités non trouvées dans la corbeille', 'green-climate'),
-      'parent_item_colon'   => '',
-      'menu_name'           => __('Entités', 'green-climate')
-    ),
-    'description'           => "",
-    'exclude_from_search'   => false,
-    'public'                => true,
-    'publicly_queryable'    => true,
-    'show_ui'               => true,
-    'show_in_nav_menus'     => true,
-    'show_in_menu'          => true,
-    'show_in_admin_bar'     => true,
-    'query_var'             => true,
-    'rewrite'               => array( 'slug' => 'agenda' ),
-    'capability_type'       => 'post',
-    'menu_icon'             => 'dashicons-networking',
-    'has_archive'           => true,
-    'hierarchical'          => false,
-    'menu_position'         => 20,
-    'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
-    'can_export'            => true,
-  );
-  register_post_type( 'entite', $args_entite );
 }
 
 add_action( 'init', 'green_climate_custom_post_type' );
