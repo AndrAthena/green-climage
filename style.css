@@ -231,13 +231,22 @@ h2.post-title::before,
   padding: 0.5rem 0;
 }
 
+@media (max-width: 767px) {
+  .custom-menu {
+    position: absolute;
+    top: -70px;
+    right: 0;
+  }
+}
+
 .custom-menu .navbar-collapse {
-  position: absolute;
-  top: 100%;
-  right: 1rem;
-  width: 400px;
+  position: fixed;
+  top: 190px;
+  left: 0;
+  width: 100%;
   padding: 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
+  z-index: 100;
+  background-color: #fff;
 }
 
 .custom-menu li {
@@ -247,8 +256,6 @@ h2.post-title::before,
   overflow: hidden;
 }
 
-.custom-menu li:hover,
-.custom-menu li:focus,
 .custom-menu li:focus-within {
   height: auto;
 }
@@ -276,7 +283,11 @@ h2.post-title::before,
   display: inline-block;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1050px) {
+  .custom-menu {
+    padding: 0;
+  }
+
   .custom-menu,
   .custom-menu .navbar-nav {
     flex-flow: row nowrap;
@@ -289,7 +300,8 @@ h2.post-title::before,
   .custom-menu .navbar-collapse {
     position: initial;
     display: flex;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     box-shadow: none;
   }
 
@@ -299,22 +311,27 @@ h2.post-title::before,
 
   .custom-menu .navbar-nav {
     justify-content: flex-end;
-    align-items: center;
   }
 
   .custom-menu .navbar-nav li {
     position: relative;
     margin-bottom: 0;
+    height: auto;
+    padding: 0.5rem 0;
+    position: relative;
+    overflow: initial;
   }
 
   .custom-menu .navbar-nav > li > a {
     padding: 0 1rem;
   }
+
   .custom-menu .navbar-nav > li:not(:last-of-type) > a {
     border-right: 1px solid #000;
   }
 
   .custom-menu .sub-menu {
+    min-width: min-content;
     width: 100%;
     position: absolute;
     top: calc(100% + 1rem);
@@ -323,7 +340,6 @@ h2.post-title::before,
     padding: 0.5rem;
     opacity: 0;
     visibility: hidden;
-    box-shadow: 4px 2px 5px 0 rgba(0, 0, 0, 0.16);
     transition: all ease 0.2s;
   }
 
