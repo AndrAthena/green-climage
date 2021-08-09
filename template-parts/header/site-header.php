@@ -53,27 +53,29 @@
   </div>
   </div>
   <div class="menu-mobile d-block d-lg-none">
-    <button class="btn menu-back bg-transparent">
-      <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24" width="14" fill="#000000">
-        <path d="M0 0h24v24H0V0z" fill="none" opacity=".87"/><path d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"/>
-      </svg>
-      <span class="text-14">Retour</span>
-    </button>
-    <?php
-      wp_nav_menu(
-        array(
-          'theme_location'  => 'secondary',
-          'menu_class'      => 'list-unstyled',
-          'container'       => null
-        )
-      );
-      wp_nav_menu(
-        array(
-          'theme_location'  => 'main',
-          'menu_class'      => 'list-unstyled',
-          'container'       => null
-        )
-      );
-    ?>
+    <div class="position-relative">
+      <button class="btn menu-back bg-transparent">
+        <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24" width="14" fill="#000000">
+          <path d="M0 0h24v24H0V0z" fill="none" opacity=".87"/><path d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"/>
+        </svg>
+        <span class="text-14">Retour</span>
+      </button>
+      <?php
+        wp_nav_menu(
+          array(
+            'theme_location'  => 'secondary',
+            'menu_class'      => 'list-unstyled',
+            'container'       => null
+          )
+        );
+        wp_nav_menu(
+          array(
+            'theme_location'  => 'main',
+            'menu_class'      => 'list-unstyled',
+            'container'       => null
+          )
+        );
+      ?>
+    </div>
   </div>
 </header>

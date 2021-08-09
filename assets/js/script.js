@@ -1,15 +1,17 @@
 (function ($) {
-  var menuList = $('.menu-mobile > ul > li.menu-item-has-children');
+  var menuList = $('.menu-mobile li.menu-item-has-children');
   $.each(menuList, function () {
     $(this).click(function () {
       $(this).addClass('active');
       $('.menu-mobile').addClass('sub-menu-open');
+      $(this).parent('ul').addClass('collapsed');
     });
   });
 
   $('.menu-back').click(function () {
     $('.menu-item').removeClass('active');
     $('.menu-mobile').removeClass('sub-menu-open');
+    $('.menu-mobile ul').removeClass('collapsed');
   });
 
   var menuToggler = $('.menu-toggler');
@@ -44,5 +46,21 @@
     infinite: false,
     prevArrow: prev,
     nextArrow: next,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
 })(jQuery);
