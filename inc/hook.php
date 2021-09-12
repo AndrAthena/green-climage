@@ -48,4 +48,12 @@ function green_climate_pagination() {
   } else return;
 }
 
+function green_climate_pre_get_posts($query) {
+  if(!is_admin() && $query->is_main_query() && is_post_type_archive( 'agenda' )) {
+    $query->set('posts_per_page', 9);
+  }
+}
+
+add_action( 'pre_get_posts','green_climate_pre_get_posts' );
+
 ?>

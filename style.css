@@ -253,8 +253,10 @@ a:focus {
   align-items: center;
 }
 
-#agenda .agenda-list .slick-list {
-  max-width: calc(100% - 84px);
+@media (min-width: 601px) {
+  #agenda .agenda-list .slick-list {
+    max-width: calc(100% - 84px);
+  }
 }
 
 #agenda .agenda-list .slick-arrow {

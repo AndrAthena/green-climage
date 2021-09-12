@@ -32,6 +32,9 @@ function green_climate_listing_actus() { ?>
           <img src="https://via.placeholder.com/350x250" alt="<?php the_title() ?>" class="card-img-top img-fluid rounded-0">
         <?php endif; ?>
           <div class="card-body">
+          <?php foreach (get_the_category() as $cat) {
+              echo '<span class="mb-2 py-1 px-2 badge badge-primary bg-primary">'. $cat->name . '</span>';
+          } ?>
           <p class="text-14 text-muted mt-4"><?php the_time( 'd M Y' ) ?> </p>
           <h5 class="card-title"><?php echo get_the_title() ?></h5>
           <?php if( has_excerpt() ) : ?>
@@ -52,7 +55,7 @@ function green_climate_listing_actus() { ?>
 
     </div>
 
-    <div class="mt-4 text-right">
+    <div class="mt-4">
       <a href="<?php echo  get_post_type_archive_link( 'post' ) ?>" class="text-primary font-weight-bold">
         Voir plus d'article
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#0a8e86" class="ml-2">
@@ -122,7 +125,7 @@ function green_climate_listing_agenda() { ?>
 
   </div>
 
-  <div class="mt-4 text-right">
+  <div class="mt-4">
     <a href="<?php echo  get_post_type_archive_link( 'agenda' ) ?>" class="text-primary font-weight-bold">
       Voir plus d'agenda
       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#0a8e86" class="ml-2">

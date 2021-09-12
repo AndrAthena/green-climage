@@ -55,10 +55,36 @@
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 601,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
+  });
+
+  $('#actualite .row').slick({
+    slidesToShow: 3,
+    arrows: false,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 601,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
         },
       },
     ],

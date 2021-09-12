@@ -1,16 +1,19 @@
-<?php get_header() ?>
+<?php
 
-<div>
-  <div class="text-white py-5 mb-5" style="background: var(--blue-color)">
-    <div class="container">
-      <h1>Agenda</h1>
-    </div>
-  </div>
+
+/**
+ * Template Name: Agendas
+*/
+get_header() ?>
+
+<div class="inner">
   <div class="container">
+    <h2 class="mb-4">Agendas</h2>
     <div class="row">
       <?php
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
         $args = array(
+          'posts_per_page'  => 9,
           'post_type'       => 'agenda',
           'post_status'     => 'publish',
           'meta_key'        => 'date_evenement',
@@ -22,8 +25,8 @@
 
         if ( $agenda-> have_posts() ) : while ( $agenda-> have_posts() ) : $agenda->the_post();
       ?>
-        <article class="col-md-4 mb-4 pb-0">
-          <div class="card">
+        <div class="col-sm-6 col-md-4 mb-4 pb-0">
+          <div class="card border-0">
             <div class="card-header bg-blue d-flex align-items-center">
               <svg class="mr-3" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M43.0317 5.20676C42.9336 5.20278 42.8354 5.20211 42.7372 5.20488H39.036V2.02413C39.0361 0.751825 37.8216 0 36.5493 0H33.1373C31.865 0 30.9397 0.751825 30.9397 2.02413V5.20477H17.0602V2.02413C17.0602 0.751825 16.1349 0 14.8626 0H11.4505C10.1783 0 8.96379 0.751825 8.96379 2.02413V5.20477H5.26267C2.90004 5.13891 0.931374 7.00087 0.865512 9.36338C0.862744 9.46146 0.863409 9.55975 0.867393 9.65783V43.0843C0.867393 45.6289 2.71795 47.9999 5.26256 47.9999H42.7373C45.2819 47.9999 47.1325 45.6289 47.1325 43.0843V9.65783C47.2293 7.29631 45.3932 5.30351 43.0317 5.20676ZM33.1373 2.31326H36.7229V8.67465H33.1373V2.31326ZM11.4506 2.31326H14.747V8.67465H11.4506V2.31326ZM44.8193 43.0843C44.8193 44.3566 44.0096 45.6866 42.7373 45.6866H5.26267C3.99037 45.6866 3.18076 44.3566 3.18076 43.0843V18.506H44.8193V43.0843ZM44.8193 9.65783V16.1928H3.18065V9.65783C3.08269 8.57636 3.88001 7.6202 4.96147 7.52223C5.06154 7.51316 5.16227 7.51183 5.26256 7.51814H8.96379V8.79044C8.96379 10.0627 10.1782 10.988 11.4505 10.988H14.8626C16.0439 11.0205 17.0278 10.089 17.0602 8.90766C17.0613 8.86859 17.0613 8.82951 17.0602 8.79044V7.51803H30.9397V8.79033C30.9073 9.97164 31.8388 10.9555 33.0201 10.9879C33.0592 10.989 33.0982 10.989 33.1373 10.9879H36.5494C37.8217 10.9879 39.0361 10.0626 39.0361 8.79033V7.51803H42.7373C43.8211 7.44973 44.7551 8.27295 44.8233 9.35674C44.8297 9.45703 44.8283 9.55776 44.8193 9.65783Z" fill="white"/>
@@ -34,13 +37,13 @@
             <div class="card-body">
               <?php the_title('<h5 class="text-uppercase">', '</h5>') ?>
               <?php
-                if( has_excerpt() ) echo '<p>' .  wp_trim_excerpt( get_the_excerpt() ) . '</p>';
-                else echo '<p>' . wp_trim_words( get_the_content(), 20 ) . '</p>';
+                if( has_excerpt() ) echo '<p class="mb-3">' .  wp_trim_excerpt( get_the_excerpt() ) . '</p>';
+                else echo '<p class="mb-3">' . wp_trim_words( get_the_content(), 20 ) . '</p>';
               ?>
-              <?php green_climate_link_to( 'Voir plus', get_the_permalink() ) ?>
+              <a href="<?php the_permalink() ?>" class="font-weight-bold text-blue">Voir l'agenda</a>
             </div>
           </div>
-        </article>
+        </div>
       <?php endwhile; endif; wp_reset_query(); ?>
     </div>
     <div class="d-flex justify-content-center">
@@ -48,4 +51,5 @@
     </div>
   </div>
 </div>
+
 <?php get_footer() ?>
