@@ -33,7 +33,7 @@ function green_climate_listing_actus() { ?>
         <?php endif; ?>
           <div class="card-body">
           <?php foreach (get_the_category() as $cat) {
-              echo '<span class="mb-2 py-1 px-2 badge badge-primary bg-primary">'. $cat->name . '</span>';
+              echo '<span class="mb-2 py-1 d-inline-block text-primary text-14 font-weight-bold text-uppercase">'. $cat->name . '</span>';
           } ?>
           <p class="text-14 text-muted mt-4"><?php the_time( 'd M Y' ) ?> </p>
           <h5 class="card-title"><?php echo get_the_title() ?></h5>

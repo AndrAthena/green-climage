@@ -1,13 +1,29 @@
-<?php get_header() ?>
+<?php
+
+/**
+ * Template Name: Communiqué
+ */
+
+get_header() ?>
+
+<?php
+
+$query = get_queried_object();
+$category = $query->slug;
+
+?>
 
 <div class="inner">
   <div class="container">
-    <h2 class="mb-5">Actualités</h2>
+    <h2 class="mb-5"><?php echo $query->name ?>s</h2>
     <div class="row">
       <?php
-      $paged = get_query_var('page') ? get_query_var('page') : 1;
+
+      $paged = get_query_var('paged') ? get_query_var('paged') : 1;
       $args = array(
+        'posts_per_page'  => 9,
         'post_type'       => 'post',
+        'category_name'   => $category,
         'paged'           => $paged
       );
       $new_query = new WP_Query( $args );

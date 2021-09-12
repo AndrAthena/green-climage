@@ -49,7 +49,7 @@ function green_climate_pagination() {
 }
 
 function green_climate_pre_get_posts($query) {
-  if(!is_admin() && $query->is_main_query() && is_post_type_archive( 'agenda' )) {
+  if(!is_admin() && $query->is_main_query() && is_post_type_archive( 'agenda' ) || is_category()) {
     $query->set('posts_per_page', 9);
   }
 }
